@@ -12,7 +12,9 @@ class NetworkManager {
 
 	static let shared = NetworkManager()
 
+	let countriesURL: String
+
 	private init() {
-		
+		self.countriesURL = "https://restcountries.eu/rest/v2/all"
 	}
 }
