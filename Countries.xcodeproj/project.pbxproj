@@ -17,6 +17,7 @@
 		2DDBEEC323577F6800F337FE /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEEC223577F6800F337FE /* CountriesTableViewController.swift */; };
 		2DDBEEC52357824B00F337FE /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEEC42357824B00F337FE /* CountriesViewModel.swift */; };
 		2DDBEED02357CC1C00F337FE /* BordersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEECF2357CC1C00F337FE /* BordersTableViewController.swift */; };
+		2DDBEED32357CF2800F337FE /* BordersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBEED22357CF2800F337FE /* BordersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2DDBEEC223577F6800F337FE /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		2DDBEEC42357824B00F337FE /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 		2DDBEECF2357CC1C00F337FE /* BordersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersTableViewController.swift; sourceTree = "<group>"; };
+		2DDBEED22357CF2800F337FE /* BordersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BordersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				2DDBEECD2357CBF400F337FE /* ViewControllers */,
+				2DDBEED12357CF0D00F337FE /* ViewModels */,
 			);
 			path = Borders;
 			sourceTree = "<group>";
@@ -133,6 +136,14 @@
 				2DDBEECF2357CC1C00F337FE /* BordersTableViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2DDBEED12357CF0D00F337FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DDBEED22357CF2800F337FE /* BordersViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				2DDBEED02357CC1C00F337FE /* BordersTableViewController.swift in Sources */,
 				2DDBEEC52357824B00F337FE /* CountriesViewModel.swift in Sources */,
 				2DDBEEC323577F6800F337FE /* CountriesTableViewController.swift in Sources */,
+				2DDBEED32357CF2800F337FE /* BordersViewModel.swift in Sources */,
 				2DDBEEBD23576CBA00F337FE /* CountryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
