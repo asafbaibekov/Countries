@@ -14,7 +14,7 @@ class CountriesTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.clearsSelectionOnViewWillAppear = false
+		self.clearsSelectionOnViewWillAppear = true
 		self.viewModel.onComplete = {
 			self.tableView.reloadData()
 		}
