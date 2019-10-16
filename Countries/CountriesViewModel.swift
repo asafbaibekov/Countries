@@ -20,6 +20,7 @@ class CountriesViewModel {
 		self.countries = [CountryModel]()
 		self.filteredCountries = [CountryModel]()
 		self.rows = countries.count
+		self.selectedScopeButtonIndexDidChange(0)
 	}
 }
 
@@ -45,6 +46,16 @@ extension CountriesViewModel {
 		guard let text = searchController.searchBar.text, !text.isEmpty else { return }
 		self.filteredCountries = self.countries.filter { $0.name.lowercased().contains(text.lowercased()) || $0.nativeName.lowercased().contains(text.lowercased()) }
 		self.rows = self.filteredCountries.isEmpty ? countries.count : filteredCountries.count
+		self.onComplete?()
+	}
+	func selectedScopeButtonIndexDidChange(_ selectedScope: Int) {
+		switch selectedScope {
+		case 0: self.countries.sort(by: { $0.name < $1.name })
+		case 1: self.countries.sort(by: { $0.name > $1.name })
+		case 2: self.countries.sort(by: { $0.area ?? 0 < $1.area ?? 0 })
+		case 3: self.countries.sort(by: { $0.area ?? 0 > $1.area ?? 0 })
+		default: break
+		}
 		self.onComplete?()
 	}
 	func reset() {

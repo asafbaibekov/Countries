@@ -17,6 +17,8 @@ class CountriesTableViewController: UITableViewController {
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "Search Country"
+		searchController.searchBar.scopeButtonTitles = ["Name ASC", "Name DESC", "Area ASC", "Area DESC"]
+		searchController.searchBar.showsScopeBar = true
 		searchController.searchBar.delegate = self
 		return searchController
 	}()
@@ -65,5 +67,8 @@ extension CountriesTableViewController: UISearchResultsUpdating {
 extension CountriesTableViewController: UISearchBarDelegate {
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		self.viewModel.reset()
+	}
+	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+		self.viewModel.selectedScopeButtonIndexDidChange(selectedScope)
 	}
 }
