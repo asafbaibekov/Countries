@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Countries Table View Controller-->
+        <!--Countries-->
         <scene sceneID="pDX-Gf-FK7">
             <objects>
                 <tableViewController id="kF8-bt-QOH" customClass="CountriesTableViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="kF8-bt-QOH" id="EOe-N5-i99"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kQd-mJ-5wo"/>
+                    <navigationItem key="navigationItem" title="Countries" id="kQd-mJ-5wo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5x-ud-iWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
