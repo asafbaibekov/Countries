@@ -64,9 +64,8 @@
 			children = (
 				2DDBEEA62357645E00F337FE /* AppDelegate.swift */,
 				2DDBEEA82357645E00F337FE /* SceneDelegate.swift */,
-				2DDBEEC223577F6800F337FE /* CountriesTableViewController.swift */,
-				2DDBEEC42357824B00F337FE /* CountriesViewModel.swift */,
-				2DDBEEBC23576CBA00F337FE /* CountryModel.swift */,
+				2DDBEEC82357AFF000F337FE /* Modules */,
+				2DDBEEC72357AFE000F337FE /* Models */,
 				2DDBEEAC2357645E00F337FE /* Main.storyboard */,
 				2DDBEEAF2357645F00F337FE /* Assets.xcassets */,
 				2DDBEEB12357645F00F337FE /* LaunchScreen.storyboard */,
@@ -74,6 +73,47 @@
 				2DDBEEBA23576B4100F337FE /* NetworkManager.swift */,
 			);
 			path = Countries;
+			sourceTree = "<group>";
+		};
+		2DDBEEC62357AFD300F337FE /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				2DDBEEC92357B00300F337FE /* ViewControllers */,
+				2DDBEECB2357B01B00F337FE /* ViewModels */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		2DDBEEC72357AFE000F337FE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DDBEEBC23576CBA00F337FE /* CountryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DDBEEC82357AFF000F337FE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2DDBEEC62357AFD300F337FE /* Countries */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2DDBEEC92357B00300F337FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2DDBEEC223577F6800F337FE /* CountriesTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2DDBEECB2357B01B00F337FE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2DDBEEC42357824B00F337FE /* CountriesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
