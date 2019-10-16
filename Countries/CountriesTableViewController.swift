@@ -33,6 +33,11 @@ extension CountriesTableViewController {
 		let name = self.viewModel.getName(by: indexPath)
 		let nativeName = self.viewModel.getNativeName(by: indexPath)
 		cell.textLabel?.text = name == nativeName ? self.viewModel.getName(by: indexPath) : "\(self.viewModel.getName(by: indexPath))\n\(self.viewModel.getNativeName(by: indexPath))"
+		if let area = self.viewModel.getArea(by: indexPath) {
+			let formatter = NumberFormatter()
+			formatter.maximumFractionDigits = 2
+			cell.detailTextLabel?.text = "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
+		}
 		return cell
 	}
 }
