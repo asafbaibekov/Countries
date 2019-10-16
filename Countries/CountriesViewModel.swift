@@ -26,9 +26,9 @@ extension CountriesViewModel {
 		NetworkManager.shared.fetchCountries(
 			completion: { [weak self] result in
 				switch result {
-				case .success(let capitals):
-					self?.countries = capitals
-					self?.rows = capitals.count
+				case .success(let countries):
+					self?.countries = countries
+					self?.rows = countries.count
 					self?.onComplete?()
 				case .failure(let error):
 					print(error.localizedDescription)
