@@ -12,7 +12,7 @@ class CountriesTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// self.clearsSelectionOnViewWillAppear = false
+		self.clearsSelectionOnViewWillAppear = false
 	}
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
