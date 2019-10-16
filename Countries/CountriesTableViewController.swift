@@ -12,9 +12,21 @@ class CountriesTableViewController: UITableViewController {
 
 	let viewModel = CountriesViewModel()
 
+	lazy var searchController: UISearchController = {
+		let searchController = UISearchController(searchResultsController: nil)
+		searchController.searchResultsUpdater = self
+		searchController.obscuresBackgroundDuringPresentation = false
+		searchController.searchBar.placeholder = "Search Country"
+		searchController.searchBar.delegate = self
+		return searchController
+	}()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.clearsSelectionOnViewWillAppear = true
+		navigationItem.searchController = searchController
+		navigationItem.hidesSearchBarWhenScrolling = false
+		definesPresentationContext = true
 		self.viewModel.onComplete = {
 			self.tableView.reloadData()
 		}
@@ -41,5 +53,17 @@ extension CountriesTableViewController {
 			cell.detailTextLabel?.text = nil
 		}
 		return cell
+	}
+}
+
+extension CountriesTableViewController: UISearchResultsUpdating {
+	func updateSearchResults(for searchController: UISearchController) {
+		self.viewModel.updateSearchResults(for: searchController)
+	}
+}
+
+extension CountriesTableViewController: UISearchBarDelegate {
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		self.viewModel.reset()
 	}
 }
