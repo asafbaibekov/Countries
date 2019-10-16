@@ -8,6 +8,11 @@
 
 import Foundation
 
-struct CountryModel {
-	
+struct CountryModel: Decodable {
+
+	let name: String
+	let nativeName: String
+	let borders: [String]
+	let area: Double?
+
 }
