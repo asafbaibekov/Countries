@@ -37,6 +37,8 @@ extension CountriesTableViewController {
 			let formatter = NumberFormatter()
 			formatter.maximumFractionDigits = 2
 			cell.detailTextLabel?.text = "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
+		} else {
+			cell.detailTextLabel?.text = nil
 		}
 		return cell
 	}
