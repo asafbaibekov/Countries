@@ -12,6 +12,7 @@ struct CountryModel: Decodable {
 
 	let name: String
 	let nativeName: String
+	let alpha3Code: String
 	let borders: [String]
 	let area: Double?
 
