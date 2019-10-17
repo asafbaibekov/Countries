@@ -58,6 +58,14 @@ extension CountriesTableViewController {
 	}
 }
 
+extension CountriesTableViewController {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let bordersTVC = BordersTableViewController(style: .plain)
+		bordersTVC.viewModel = self.viewModel.getBordersViewModel(by: indexPath)
+		self.navigationController?.pushViewController(bordersTVC, animated: true)
+	}
+}
+
 extension CountriesTableViewController: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
 		self.viewModel.updateSearchResults(for: searchController)
