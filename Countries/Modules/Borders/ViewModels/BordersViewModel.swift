@@ -20,7 +20,7 @@ class BordersViewModel {
 		self.country = country
 		self.borderedCountries = borderedCountries.sorted(by: { $0.name < $1.name })
 		self.rows = borderedCountries.count
-		self.sections = 2
+		self.sections = rows == 0 ? 0 : 2
 		self.title = "Borders of \(country.name)"
 	}
 
