@@ -80,9 +80,6 @@ extension CountriesViewModel {
 	func getNativeName(at indexPath: IndexPath) -> String {
 		return self.getCountryModel(at: indexPath).nativeName
 	}
-	func getBorders(at indexPath: IndexPath) -> [String] {
-		return self.getCountryModel(at: indexPath).borders
-	}
 	func getArea(at indexPath: IndexPath) -> Double? {
 		return self.getCountryModel(at: indexPath).area
 	}
