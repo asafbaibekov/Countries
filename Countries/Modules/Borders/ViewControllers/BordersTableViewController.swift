@@ -35,8 +35,8 @@ extension BordersTableViewController {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier") { return cell }
 			return UITableViewCell(style: .subtitle, reuseIdentifier: "reuseIdentifier")
         }()
-		cell.textLabel?.text = self.viewModel.getTitle(by: indexPath)
-		cell.detailTextLabel?.text = self.viewModel.getSubtitle(by: indexPath)
+		cell.textLabel?.text = self.viewModel.getTitle(at: indexPath)
+		cell.detailTextLabel?.text = self.viewModel.getSubtitle(at: indexPath)
 		return cell
 	}
 }

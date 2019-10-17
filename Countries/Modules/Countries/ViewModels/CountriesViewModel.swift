@@ -66,24 +66,24 @@ extension CountriesViewModel {
 }
 
 extension CountriesViewModel {
-	func getCountryModel(by indexPath: IndexPath) -> CountryModel {
+	func getCountryModel(at indexPath: IndexPath) -> CountryModel {
 		return (self.filteredCountries.isEmpty ? self.countries : self.filteredCountries)[indexPath.row]
 	}
-	func getBordersViewModel(by indexPath: IndexPath) -> BordersViewModel {
-		let country = self.getCountryModel(by: indexPath)
+	func getBordersViewModel(at indexPath: IndexPath) -> BordersViewModel {
+		let country = self.getCountryModel(at: indexPath)
 		let borderedCountries = country.borders.map { border in countries.first { border == $0.alpha3Code }! }
 		return BordersViewModel(country: country, borderedCountries: borderedCountries)
 	}
-	func getName(by indexPath: IndexPath) -> String {
-		return self.getCountryModel(by: indexPath).name
+	func getName(at indexPath: IndexPath) -> String {
+		return self.getCountryModel(at: indexPath).name
 	}
-	func getNativeName(by indexPath: IndexPath) -> String {
-		return self.getCountryModel(by: indexPath).nativeName
+	func getNativeName(at indexPath: IndexPath) -> String {
+		return self.getCountryModel(at: indexPath).nativeName
 	}
-	func getBorders(by indexPath: IndexPath) -> [String] {
-		return self.getCountryModel(by: indexPath).borders
+	func getBorders(at indexPath: IndexPath) -> [String] {
+		return self.getCountryModel(at: indexPath).borders
 	}
-	func getArea(by indexPath: IndexPath) -> Double? {
-		return self.getCountryModel(by: indexPath).area
+	func getArea(at indexPath: IndexPath) -> Double? {
+		return self.getCountryModel(at: indexPath).area
 	}
 }

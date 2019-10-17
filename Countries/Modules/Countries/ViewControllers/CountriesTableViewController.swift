@@ -44,10 +44,10 @@ extension CountriesTableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 		cell.textLabel?.numberOfLines = 0
-		let name = self.viewModel.getName(by: indexPath)
-		let nativeName = self.viewModel.getNativeName(by: indexPath)
-		cell.textLabel?.text = name == nativeName ? self.viewModel.getName(by: indexPath) : "\(self.viewModel.getName(by: indexPath))\n\(self.viewModel.getNativeName(by: indexPath))"
-		if let area = self.viewModel.getArea(by: indexPath) {
+		let name = self.viewModel.getName(at: indexPath)
+		let nativeName = self.viewModel.getNativeName(at: indexPath)
+		cell.textLabel?.text = name == nativeName ? self.viewModel.getName(at: indexPath) : "\(self.viewModel.getName(at: indexPath))\n\(self.viewModel.getNativeName(at: indexPath))"
+		if let area = self.viewModel.getArea(at: indexPath) {
 			let formatter = NumberFormatter()
 			formatter.maximumFractionDigits = 2
 			cell.detailTextLabel?.text = "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
@@ -61,7 +61,7 @@ extension CountriesTableViewController {
 extension CountriesTableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let bordersTVC = BordersTableViewController(style: .plain)
-		bordersTVC.viewModel = self.viewModel.getBordersViewModel(by: indexPath)
+		bordersTVC.viewModel = self.viewModel.getBordersViewModel(at: indexPath)
 		self.navigationController?.pushViewController(bordersTVC, animated: true)
 	}
 }

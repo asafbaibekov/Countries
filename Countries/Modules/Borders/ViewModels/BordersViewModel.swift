@@ -27,7 +27,7 @@ class BordersViewModel {
 }
 
 extension BordersViewModel {
-	func getBorderedCountry(by indexPath: IndexPath) -> CountryModel {
+	func getBorderedCountry(at indexPath: IndexPath) -> CountryModel {
 		return self.borderedCountries[indexPath.row]
 	}
 	func getTitle(for section: Int) -> String? {
@@ -37,15 +37,15 @@ extension BordersViewModel {
 		default: return nil
 		}
 	}
-	func getTitle(by indexPath: IndexPath) -> String? {
+	func getTitle(at indexPath: IndexPath) -> String? {
 		switch indexPath.section {
-		case 0: return getBorderedCountry(by: indexPath).name
-		case 1: return getBorderedCountry(by: indexPath).nativeName
+		case 0: return getBorderedCountry(at: indexPath).name
+		case 1: return getBorderedCountry(at: indexPath).nativeName
 		default: return nil
 		}
 	}
-	func getSubtitle(by indexPath: IndexPath) -> String? {
-		guard let area = self.getBorderedCountry(by: indexPath).area else { return nil }
+	func getSubtitle(at indexPath: IndexPath) -> String? {
+		guard let area = self.getBorderedCountry(at: indexPath).area else { return nil }
 		let formatter = NumberFormatter()
 		formatter.maximumFractionDigits = 2
 		return "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
