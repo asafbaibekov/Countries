@@ -45,13 +45,7 @@ extension CountriesTableViewController {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 		cell.textLabel?.numberOfLines = 0
 		cell.textLabel?.text = self.viewModel.getTitle(at: indexPath)
-		if let area = self.viewModel.getArea(at: indexPath) {
-			let formatter = NumberFormatter()
-			formatter.maximumFractionDigits = 2
-			cell.detailTextLabel?.text = "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
-		} else {
-			cell.detailTextLabel?.text = nil
-		}
+		cell.detailTextLabel?.text = self.viewModel.getSubtitle(at: indexPath)
 		return cell
 	}
 }

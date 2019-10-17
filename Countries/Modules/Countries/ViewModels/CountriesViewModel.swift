@@ -79,7 +79,10 @@ extension CountriesViewModel {
 		let nativeName = self.getCountryModel(at: indexPath).nativeName
 		return name == nativeName ? name : "\(name)\n\(nativeName)"
 	}
-	func getArea(at indexPath: IndexPath) -> Double? {
-		return self.getCountryModel(at: indexPath).area
+	func getSubtitle(at indexPath: IndexPath) -> String? {
+		guard let area = self.getCountryModel(at: indexPath).area else { return nil }
+		let formatter = NumberFormatter()
+		formatter.maximumFractionDigits = 2
+		return "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
 	}
 }
