@@ -66,9 +66,6 @@ extension CountriesViewModel {
 }
 
 extension CountriesViewModel {
-	func getCountry(at indexPath: IndexPath) -> CountryModel {
-		return (self.filteredCountries.isEmpty ? self.countries : self.filteredCountries)[indexPath.row]
-	}
 	func getBordersViewModel(at indexPath: IndexPath) -> BordersViewModel {
 		let country = self.getCountry(at: indexPath)
 		let borderedCountries = country.borders.map { border in countries.first { border == $0.alpha3Code }! }
@@ -84,5 +81,11 @@ extension CountriesViewModel {
 		let formatter = NumberFormatter()
 		formatter.maximumFractionDigits = 2
 		return "area: \(formatter.string(from: NSNumber(floatLiteral: area))!)"
+	}
+}
+
+private extension CountriesViewModel {
+	func getCountry(at indexPath: IndexPath) -> CountryModel {
+		return (self.filteredCountries.isEmpty ? self.countries : self.filteredCountries)[indexPath.row]
 	}
 }
