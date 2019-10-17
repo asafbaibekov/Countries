@@ -10,6 +10,8 @@ import UIKit
 
 class BordersTableViewController: UITableViewController {
 
+	var viewModel: BordersViewModel!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.tableView.allowsSelection = false
