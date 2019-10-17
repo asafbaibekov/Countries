@@ -69,6 +69,11 @@ extension CountriesViewModel {
 	func getCountryModel(by indexPath: IndexPath) -> CountryModel {
 		return (self.filteredCountries.isEmpty ? self.countries : self.filteredCountries)[indexPath.row]
 	}
+	func getBordersViewModel(by indexPath: IndexPath) -> BordersViewModel {
+		let country = self.getCountryModel(by: indexPath)
+		let borderedCountries = country.borders.map { border in countries.first { border == $0.alpha3Code }! }
+		return BordersViewModel(country: country, borderedCountries: borderedCountries)
+	}
 	func getName(by indexPath: IndexPath) -> String {
 		return self.getCountryModel(by: indexPath).name
 	}
