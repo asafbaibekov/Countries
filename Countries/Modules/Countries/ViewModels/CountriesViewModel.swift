@@ -74,11 +74,10 @@ extension CountriesViewModel {
 		let borderedCountries = country.borders.map { border in countries.first { border == $0.alpha3Code }! }
 		return BordersViewModel(country: country, borderedCountries: borderedCountries)
 	}
-	func getName(at indexPath: IndexPath) -> String {
-		return self.getCountryModel(at: indexPath).name
-	}
-	func getNativeName(at indexPath: IndexPath) -> String {
-		return self.getCountryModel(at: indexPath).nativeName
+	func getTitle(at indexPath: IndexPath) -> String? {
+		let name = self.getCountryModel(at: indexPath).name
+		let nativeName = self.getCountryModel(at: indexPath).nativeName
+		return name == nativeName ? name : "\(name)\n\(nativeName)"
 	}
 	func getArea(at indexPath: IndexPath) -> Double? {
 		return self.getCountryModel(at: indexPath).area

@@ -44,9 +44,7 @@ extension CountriesTableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 		cell.textLabel?.numberOfLines = 0
-		let name = self.viewModel.getName(at: indexPath)
-		let nativeName = self.viewModel.getNativeName(at: indexPath)
-		cell.textLabel?.text = name == nativeName ? self.viewModel.getName(at: indexPath) : "\(self.viewModel.getName(at: indexPath))\n\(self.viewModel.getNativeName(at: indexPath))"
+		cell.textLabel?.text = self.viewModel.getTitle(at: indexPath)
 		if let area = self.viewModel.getArea(at: indexPath) {
 			let formatter = NumberFormatter()
 			formatter.maximumFractionDigits = 2
