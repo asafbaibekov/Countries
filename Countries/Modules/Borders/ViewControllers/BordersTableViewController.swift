@@ -28,7 +28,7 @@ extension BordersTableViewController {
 		return self.viewModel.rows
 	}
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return self.viewModel.getTitle(for: section)
+		return self.viewModel.getHeaderTitle(for: section)
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: UITableViewCell = {

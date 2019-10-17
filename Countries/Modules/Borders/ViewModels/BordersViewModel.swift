@@ -27,7 +27,7 @@ class BordersViewModel {
 }
 
 extension BordersViewModel {
-	func getTitle(for section: Int) -> String? {
+	func getHeaderTitle(for section: Int) -> String? {
 		switch section {
 		case 0: return "Names"
 		case 1: return "Native names"
