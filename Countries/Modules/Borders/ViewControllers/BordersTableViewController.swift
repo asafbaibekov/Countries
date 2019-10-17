@@ -14,6 +14,7 @@ class BordersTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.title = self.viewModel.title
 		self.tableView.allowsSelection = false
 	}
 
@@ -21,22 +22,21 @@ class BordersTableViewController: UITableViewController {
 
 extension BordersTableViewController {
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		// #warning Incomplete implementation, return the number of sections
-		return 0
+		return self.viewModel.sections
 	}
-
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		// #warning Incomplete implementation, return the number of rows
-		return 0
+		return self.viewModel.rows
 	}
-
-	/*
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return self.viewModel.getTitle(for: section)
+	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-		// Configure the cell...
-
+		let cell: UITableViewCell = {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier") { return cell }
+			return UITableViewCell(style: .subtitle, reuseIdentifier: "reuseIdentifier")
+        }()
+		cell.textLabel?.text = self.viewModel.getTitle(by: indexPath)
+		cell.detailTextLabel?.text = self.viewModel.getSubtitle(by: indexPath)
 		return cell
 	}
-	*/
 }
