@@ -32,9 +32,9 @@ extension BordersTableViewController {
 	}
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: UITableViewCell = {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier") { return cell }
+			if let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier") { return cell }
 			return UITableViewCell(style: .subtitle, reuseIdentifier: "reuseIdentifier")
-        }()
+		}()
 		cell.textLabel?.text = self.viewModel.getTitle(at: indexPath)
 		cell.detailTextLabel?.text = self.viewModel.getSubtitle(at: indexPath)
 		return cell
